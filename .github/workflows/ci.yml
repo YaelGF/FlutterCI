@@ -5,7 +5,8 @@ on:
       - main
 
 jobs:
-  test:
+  flutter_test:
+      name: Run flutter test and analize
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
