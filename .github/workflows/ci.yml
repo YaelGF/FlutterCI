@@ -59,7 +59,7 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: apk-build
-          path: build/app/app_relase.apk
+          path: ./app/app-relase-${{ github.sha }}.apk
       
   relase:
     name: Create a Release APK
@@ -86,7 +86,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
-          asset_path: ./build/app/*.apk
+          asset_path: ./app/*.apk
           asset_name: app-release-${{ github.sha }}.apk
           asset_content_type: application/vnd.android.package-archive
           upload_url: ${{ steps.create_release.outputs.upload_url }}
