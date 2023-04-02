@@ -33,7 +33,7 @@ jobs:
           channel: "stable"
       - run: flutter pub get
       - run: flutter clean
-      - run: flutter build ios --no-codesing
+      - run: flutter build ios
       - name: Upload iPA
         uses: actions/upload-artifact@v2
         with:
@@ -54,8 +54,8 @@ jobs:
           channel: "stable"
       - run: flutter pub get
       - run: flutter clean
-      - run: flutter build build_appbundle
-      
+      - run: flutter build appbundle
+
       - uses: actions/upload-artifact@master
         with:
           name: apk-build
