@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: ios-build
-          path: build/app/outputs/ios-relase.ipa
+          path: build/app/ios-relase.ipa
       
   build_appbundle: 
     name: Build Flutter (Android)
@@ -59,7 +59,7 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: apk-build
-          path: build/app/outputs/app-relase.apk
+          path: build/app/app-relase.apk
       
   relase:
     name: Create a Release APK
@@ -72,7 +72,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1.0.0
         with:
-          artifacts: "build/app/outputs/*.apk"
+          artifacts: "build/app/*.apk"
           release_name: Release ${{ github.sha }}
           tag_name: ${{ github.sha }}
           draft: false
