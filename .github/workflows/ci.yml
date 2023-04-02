@@ -33,12 +33,12 @@ jobs:
           channel: "stable"
       - run: flutter pub get
       - run: flutter clean
-      - run: flutter build ios
+      - run: flutter build ios --release
       - name: Upload iPA
         uses: actions/upload-artifact@v2
         with:
           name: ios-build
-          path: build/app/outputs/ios-relase.apk
+          path: build/app/outputs/ios-relase.ipa
       
   build_appbundle: 
     name: Build Flutter (Android)
