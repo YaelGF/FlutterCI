@@ -72,9 +72,10 @@ jobs:
         id: create_release
         uses: actions/create-release@v1.0.0
         with:
-          artifacts: "build/app/*.apk"
+          assets: build/app/app-relase.apk
+          release_id: ${{ github.event.release.id }}
           release_name: Release ${{ github.sha }}
           tag_name: ${{ github.sha }}
           draft: false
           prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
